@@ -1,4 +1,9 @@
+#include <iostream>
+#include <vector>
+#include <chrono>
 
+const int N = 512; // Grid size NxN
+const int STEPS = 1000;
 
 void simulateCPU(std::vector<float>& grid, std::vector<float>& new_grid) {
     for (int step = 0; step < STEPS; ++step) {
