@@ -2,6 +2,8 @@
 #include <vector>
 #include <chrono>
 
+// Note : chrono is a c++ library used to measure work with time
+
 const int N = 512; // Grid size NxN
 const int STEPS = 1000;
 
