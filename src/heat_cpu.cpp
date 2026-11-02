@@ -35,4 +35,3 @@ int main() {
     std::cout << "CPU Execution Time for " << STEPS << " steps: " << elapsed.count() << " ms\n";
     return 0;
 }
-
