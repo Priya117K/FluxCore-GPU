@@ -1,3 +1,5 @@
+// This is to perform heat_cuda.cu   (this's not a duty of cpu, cuda will take care of this)
+
 #include <iostream>
 #include <cuda_runtime.h>
 #include <chrono>
