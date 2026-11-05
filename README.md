@@ -10,3 +10,5 @@ A high-performance computing (HPC) project comparing sequential CPU performance 
 - **Grid Size:** 512 x 512
 - **Iterations:** 1000 steps
 - **CPU Baseline Execution Time:** (Measured via `std::chrono`)
+
+.
