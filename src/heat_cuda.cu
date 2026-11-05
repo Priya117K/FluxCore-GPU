@@ -81,5 +81,6 @@ int main() {
     delete[] h_grid;
     cudaFree(d_in);
     cudaFree(d_out);
+    return 0;
     
 }
