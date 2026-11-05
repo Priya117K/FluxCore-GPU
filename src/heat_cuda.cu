@@ -1,32 +1,4 @@
 
-#include <iostream>
-#include <cuda_runtime.h>
-#include <chrono>
-#include <cmath>
-#include <algorithm>
-
-#define N 512       
-#define STEPS 1000  
-#define BLOCK_SIZE 16 
-
-// Naive GPU Kernel (the fast one!)
-__global__ void heatKernelNaive(const float* __restrict__ in_grid, float* __restrict__ out_grid, int n) {
-    int row = blockIdx.y * blockDim.y + threadIdx.y;
-    int col = blockIdx.x * blockDim.x + threadIdx.x;
-
-    if (row > 0 && row < n - 1 && col > 0 && col < n - 1) {
-        float current = in_grid[row * n + col];
-        float north   = in_grid[(row - 1) * n + col];
-        float south   = in_grid[(row + 1) * n + col];
-        float east    = in_grid[row * n + col + 1];
-        float west    = in_grid[row * n + col - 1];
-
-        out_grid[row * n + col] = current + 0.25f * (north + south + east + west - 4.0f * current);
-    } else if (row < n && col < n) {
-        out_grid[row * n + col] = in_grid[row * n + col];
-    }
-}
-
 // Host function to compute max temperature for metrics tracking
 float findMaxTemperature(const float* grid, int n) {
     float max_temp = 0.0f;
