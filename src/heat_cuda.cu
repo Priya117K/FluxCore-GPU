@@ -67,7 +67,19 @@ int main() {
     std::chrono::duration<float, std::milli> elapsed = end_time - start_time;
 
     // Bring results back for metrics check
+    cudaMemcpy(h_grid, d_in, size, cudaMemcpyDeviceToHost);
     
+    float peak_temp = findMaxTemperature(h_grid, N);
+
+    std::cout << "----------------------------------------\n";
+    std::cout << "CUDA Execution Time: " << elapsed.count() << " ms\n";
+    std::cout << "Peak Grid Temperature after " << STEPS << " steps: " << peak_temp << " C\n";
+    std::cout << "----------------------------------------\n";
+
+    delete[] h_grid;
+    cudaFree(d_in);
+    cudaFree(d_out);
+    return 0; 
     
 }
 
