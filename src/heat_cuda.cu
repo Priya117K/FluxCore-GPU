@@ -1,9 +1,5 @@
 
-#include <iostream>
-#include <cuda_runtime.h>
-#include <chrono>
-#include <cmath>
-#include <algorithm>
+
 
 #define N 512       
 #define STEPS 1000  
