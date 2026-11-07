@@ -8,7 +8,6 @@
 #define STEPS 1000  
 #define BLOCK_SIZE 16 
 
-
 // Naive GPU Kernel (the fast one!)
 __global__ void heatKernelNaive(const float* __restrict__ in_grid, float* __restrict__ out_grid, int n) {
     int row = blockIdx.y * blockDim.y + threadIdx.y;
@@ -83,6 +82,3 @@ int main() {
     return 0; 
     
 }
-
-
-
