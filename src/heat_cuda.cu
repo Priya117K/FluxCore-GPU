@@ -6,6 +6,7 @@
 
 #define N 512       
 #define STEPS 1000  
+#define BLOCK_SIZE 16 
 
 
 // Naive GPU Kernel (the fast one!)
