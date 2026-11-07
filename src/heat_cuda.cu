@@ -6,7 +6,7 @@
 
 #define N 512       
 #define STEPS 1000  
-#define BLOCK_SIZE 16 
+
 
 // Naive GPU Kernel (the fast one!)
 __global__ void heatKernelNaive(const float* __restrict__ in_grid, float* __restrict__ out_grid, int n) {
