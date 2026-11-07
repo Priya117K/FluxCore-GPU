@@ -77,7 +77,10 @@ int main() {
     std::cout << "Peak Grid Temperature after " << STEPS << " steps: " << peak_temp << " C\n";
     std::cout << "----------------------------------------\n";
 
-    
+    delete[] h_grid;
+    cudaFree(d_in);
+    cudaFree(d_out);
+    return 0; 
     
 }
 
